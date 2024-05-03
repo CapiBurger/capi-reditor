@@ -2,9 +2,9 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-name 'arousa-reditor'
+name 'capi3d-reditor'
 author 'capi3d'
-description 'ROCKSTAR EDTIOR MENU by ArousaTown'
+description 'ROCKSTAR EDTIOR MENU by capi3d'
 version '1.0.0'
 
 client_scripts {
