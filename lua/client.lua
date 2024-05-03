@@ -1,4 +1,19 @@
 ---@diagnostic disable: trailing-space
+if Config.Framework == 'qbcore' then
+    local QBCore = exports['qb-core']:GetCoreObject()
+end
+if Config.Framework == 'esx' then
+    ESX = nil
+
+    Citizen.CreateThread(function()
+        while ESX == nil do
+            TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+            Citizen.Wait(0)
+            PlayerData = ESX.GetPlayerData()
+        end
+    end)
+end
+
 local loopType = nil
 local opened = false
 local PreviousComponent = {}
@@ -239,21 +254,82 @@ RegisterNUICallback('select', function(data)
     local item = data.item
 
     if PreviousComponent[item] == nil then
-        if item == 'grabar' then
-            ExecuteCommand('record start')
-            exports[Config.Notification]:ShowNotification("Se empezó una grabación.", "success") 
-        elseif item == 'parar' then
-            ExecuteCommand('record stop')
-            exports[Config.Notification]:ShowNotification("Se acabó una grabación.", "success") 
-        elseif item == 'borrar' then
-            exports[Config.Notification]:ShowNotification("Se borró la última grabación en progreso.", "success") 
-            ExecuteCommand('record discard')
-        elseif item == 'foto' then
-            exports[Config.Notification]:ShowNotification("Se realizó una fotografía.", "success") 
-            ExecuteCommand('picture')
-        elseif item == 'menu' then
-            exports[Config.Notification]:ShowNotification("Se abrió el menú de Rockstar Editor.", "success") 
-            ExecuteCommand('rockstareditor')
+        if Config.Notify == "origen" then
+            if item == 'grabar' then
+                ExecuteCommand('record start')
+                exports[Config.OrigenNotification]:ShowOrigenNotification("Se empezó una grabación.", "success") 
+            elseif item == 'parar' then
+                ExecuteCommand('record stop')
+                exports[Config.OrigenNotification]:ShowOrigenNotification("Se acabó una grabación.", "success") 
+            elseif item == 'borrar' then
+                exports[Config.OrigenNotification]:ShowOrigenNotification("Se borró la última grabación en progreso.", "success") 
+                ExecuteCommand('record discard')
+            elseif item == 'foto' then
+                exports[Config.OrigenNotification]:ShowOrigenNotification("Se realizó una fotografía.", "success") 
+                ExecuteCommand('picture')
+            elseif item == 'menu' then
+                exports[Config.OrigenNotification]:ShowOrigenNotification("Se abrió el menú de Rockstar Editor.", "success") 
+                ExecuteCommand('rockstareditor')
+            end
+        end
+        if Config.Notify == "default" and Config.Framework == "qbcore" then
+            if item == 'grabar' then
+                ExecuteCommand('record start')
+                --exports[Config.OrigenNotification]:ShowOrigenNotification("Se empezó una grabación.", "success") 
+                QBCore.Functions.Notify("Se empezó una grabación.", success)
+            elseif item == 'parar' then
+                ExecuteCommand('record stop')
+                --exports[Config.OrigenNotification]:ShowOrigenNotification("Se acabó una grabación.", "success") 
+                QBCore.Functions.Notify("Se acabó una grabación.", success)
+            elseif item == 'borrar' then
+                --exports[Config.OrigenNotification]:ShowOrigenNotification("Se borró la última grabación en progreso.", "success") 
+                QBCore.Functions.Notify("Se borró la última grabación en progreso.", success)
+                ExecuteCommand('record discard')
+            elseif item == 'foto' then
+                --exports[Config.OrigenNotification]:ShowOrigenNotification("Se realizó una fotografía.", "success") 
+                QBCore.Functions.Notify("Se realizó una fotografía.", success)
+                ExecuteCommand('picture')
+            elseif item == 'menu' then
+                --exports[Config.OrigenNotification]:ShowOrigenNotification("Se abrió el menú de Rockstar Editor.", "success") 
+                QBCore.Functions.Notify("Se abrió el menú de Rockstar Editor.", success)
+                ExecuteCommand('rockstareditor')
+            end
+        end
+        if Config.Notify == "default" and Config.Framework == "esx" then
+            if item == 'grabar' then
+                ExecuteCommand('record start')
+                ESX.ShowNotification("Se empezó una grabación.")
+            elseif item == 'parar' then
+                ExecuteCommand('record stop')
+                ESX.ShowNotification("Se acabó una grabación.")
+            elseif item == 'borrar' then
+                ESX.ShowNotification("Se borró la última grabación en progreso.")
+                ExecuteCommand('record discard')
+            elseif item == 'foto' then
+                ESX.ShowNotification("Se realizó una fotografía.")
+                ExecuteCommand('picture')
+            elseif item == 'menu' then
+                ESX.ShowNotification("Se abrió el menú de Rockstar Editor.")
+                ExecuteCommand('rockstareditor')
+            end
+        end
+        if Config.Framework == "standalone" then
+            if item == 'grabar' then
+                ExecuteCommand('record start')
+                Framework.ShowNotification("Se empezó una grabación.")
+            elseif item == 'parar' then
+                ExecuteCommand('record stop')
+                Framework.ShowNotification("Se acabó una grabación.")
+            elseif item == 'borrar' then
+                Framework.ShowNotification("Se borró la última grabación en progreso.")
+                ExecuteCommand('record discard')
+            elseif item == 'foto' then
+                Framework.ShowNotification("Se realizó una fotografía.")
+                ExecuteCommand('picture')
+            elseif item == 'menu' then
+                Framework.ShowNotification("Se abrió el menú de Rockstar Editor.")
+                ExecuteCommand('rockstareditor')
+            end
         end
     end
 end)
