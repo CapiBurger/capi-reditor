@@ -1,8 +1,11 @@
 Config = {}
 
--- Key Mapping (asignación de teclas)
-Config.Command = 'reditor' -- Comando para abrir el menú de FPS
-Config.KeyToOpen = 'O' -- Tecla para abrir el menú de FPS
+Config.Framework = 'qbcore' -- Por ahora, solo disponible QBCore en caso de usar las notificaciones default, para notificaciones de Origen puedes usarlo de forma standalone. 
 
-Config.Notify = "default" -- Default (QBCore) & Origen (origen_notify)
-Config.OrigenNotification = "origen_notify" -- Solo si tienes la anterior opcion en Origen. Notificación [EXPORT] SE CAMBIARIA EL CONFIG.NOTIFICATION. EX: exports[Config.Notification]:ShowNotification("Se cambiaron los gráficos a bajo", "success") 
+-- Key Mapping (asignación de teclas)
+Config.Command = 'reditor' -- Comando para abrir el menú de Rockstar Editor
+Config.KeyToOpen = 'O' -- Tecla para abrir el menú de Rockstar Editor
+
+-- NOTIFICACIONES
+Config.Notify = "default" -- default (QBCore) & origen (origen_notify)
+Config.OrigenNotification = "origen_notify" -- Solo si tienes la anterior opcion en Origen.
