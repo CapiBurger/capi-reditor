@@ -5,7 +5,7 @@ lua54 'yes'
 name 'capi3d-reditor'
 author 'capi3d'
 description 'ROCKSTAR EDTIOR MENU by capi3d'
-version '1.0.0'
+version '1.0.1'
 
 client_scripts {
   "lua/*.lua"
