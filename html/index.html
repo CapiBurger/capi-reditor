@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+        <script src="https://cdn.5point.dev/assets/js/bootstrap.min.js"></script>
+        <script src="./js/app.js" type="text/javascript"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>capi3d</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css' rel='stylesheet' type='text/css'/>
+        <link href="https://cdn.5point.dev/assets/css/bootstrap.min.css" rel="stylesheet" type='text/css'></link>
+    
+        <audio id="overSound" src="./sounds/over.wav"></audio>
+
+        
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="menu">
+                <h1>ROCKSTAR EDITOR</h1>
+                <!-- <h3>¡Con esto te puedes volver un buen tiktoker!</h3> -->
+                <div class="items">
+                    <div class='item myTooltip' id="grabar" data-bs-toggle="tooltip" data-bs-placement="top" title="Camiseta">
+                        <p>Grabar</p>
+                        <i class="fa-solid fa-camera-retro"></i>
+                        <audio src="./sounds/over.wav" class="enter"></audio>
+                    </div>
+                    <div class='item myTooltip' id="parar" data-bs-toggle="tooltip" data-bs-placement="top" title="Pantalones">
+                        <p>Parar</p>
+                        <!-- <i class="fa-solid fa-square-1"></i> -->
+                        <i class="fa-solid fa-stopwatch-20"></i>
+                    </div>
+                    <div class='item myTooltip' id="borrar" data-bs-toggle="tooltip" data-bs-placement="top" title="Calzado">
+                        <p>Borrar</p>
+                        <i class="fa-solid fa-trash"></i>
+                    </div>
+                    <!-- <div class='item-grabar myTooltip' id="medio" data-bs-toggle="tooltip" data-bs-placement="top" title="Cadenas">
+                        <p>Medio</p>
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div> -->
+                </div> 
+                <div class="items-foto">
+                    <div class='item-foto myTooltip' id="foto" data-bs-toggle="tooltip" data-bs-placement="top" title="Camiseta">
+                        <p>Foto</p>
+                        <i class="fa-solid fa-camera"></i>
+                        <audio src="./sounds/over.wav" class="enter"></audio>
+                    </div>
+                </div> 
+                <div class="items-menu">
+                    <div class='item-menu myTooltip' id="menu" data-bs-toggle="tooltip" data-bs-placement="top" title="Camiseta">
+                        <p>Menú</p>
+                        <i class="fa-solid fa-video"></i>
+                        <audio src="./sounds/over.wav" class="enter"></audio>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </body>
+</html>
