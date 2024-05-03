@@ -1,0 +1,383 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:400,500,600,700,800,900);
+
+@font-face {
+	font-family: 'bankgothic';
+	src: url('../fonts/bankgothic.ttf');
+}
+
+:root {
+	--cubic: cubic-bezier(0, 0.53, 0.11, 0.995);
+}
+
+body {
+    background-color: transparent !important;
+}
+
+p {
+    top: -11111vh;
+}
+
+* {
+    /*font-family: 'Inter', sans-serif;*/
+    font-family: bankgothic;
+    font-weight: 800;
+    user-select: none;
+}
+
+.container {
+    box-shadow: 0 0 25px 0 rgb(0, 0, 0);
+    display: none;
+}
+
+.menu {
+    position: absolute;
+    /* top: 6%;
+    right: 1%;
+    width: 23vw;
+    height: 50.7vw; */
+    right: 2vh;
+	top: 6vh;
+	width: 40vh;
+	height: 90vh;
+    /* background: rgba(0, 0, 0, 0.938); */
+    /* background: url(https://media.discordapp.net/attachments/1213806577035776001/1223823320261332992/bg.jpg?ex=661b4149&is=6608cc49&hm=8b111df15453febdfc09ad0c336c479817165b920f87561c0e2766287c9a6c62&=&format=webp); */
+    box-shadow: 0 0 25px 0 rgb(0, 0, 0);
+    overflow: hidden;
+    transition: cubic-bezier(0, 0.53, 0.11, 0.995) 0.5s all;
+    background-color: black;
+    display: block;
+
+    /* background-color: unset;
+    background: linear-gradient(
+		270deg,
+		#20c200,
+		#cf0000,
+		#8400ff
+	);
+    background-size: 700% 700%;
+	animation: gradient 11s ease infinite;
+	animation-delay: 3.5s;
+    opacity: 95%; */
+} 
+
+
+
+
+
+
+
+
+
+.menu h1 {
+    text-align: center;
+    color: #eee;
+    margin-top: .8vw;
+    margin-bottom: .5vw;
+    letter-spacing: 1px;
+    font-size: 3.5vw;
+    text-shadow: -1px 1px 22px rgba(0,0,0,0.6);
+}
+.menu h2 {
+    position: absolute;
+    text-align: center;
+    color: #b1b1b1;
+    /* top: -7vh;
+    left: 53vh; */
+    left: 11.3vh;
+    top: 15vh;
+    font-size: 1.5vw;
+    text-shadow: -1px 1px 22px rgba(0,0,0,0.6);
+}
+.menu h3 {
+    position: absolute;
+    text-align: center;
+    color: #ffffff;
+    top: 70vh;
+    left: 37vh;
+    font-size: 1.5vw;
+    text-shadow: -1px 1px 22px rgba(0,0,0,0.6);
+}
+
+#message {
+	display: inline-block;
+	transition: opacity 0.25s;
+    color: white;
+    /* font-family: gravity; */
+    position: absolute;
+    top: 7vh;
+    left: 53vh;
+    z-index: 99;
+}
+
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    height: 19vw;
+    margin-top: .5vw;
+    
+}
+
+.item {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid #aaa;
+    width: 5vw;
+    height: 10.5vw;
+    margin-left: .8vw;
+    margin-right: .8vw;
+    margin-top: 27.5vw;
+    transition: .3s;
+    cursor: pointer;
+    
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 100%;
+
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.747);
+}
+
+#grabar {
+    background-color: rgb(64, 189, 106);
+}
+#parar {
+    background-color: rgb(199, 135, 40);
+}
+#borrar {
+    background-color: rgb(199, 40, 40);
+}
+
+.item p {
+    position: absolute;
+    top: 65vh;
+    font-size: 1.5vw;
+    text-shadow: -1px 1px 22px rgba(0,0,0,0.6);
+}
+
+.item:hover {
+    /* background-color: #007add; */
+    
+    background-color: unset;
+    background: linear-gradient(
+		270deg,
+		#dd0000, 
+		#007add
+	);
+    background-size: 700% 700%;
+	animation: gradient 11s ease infinite;
+	animation-delay: .5s;
+    opacity: 95%;
+}
+
+.item i {
+    font-size: 2.5vw;
+    text-align: center;
+    justify-content: center;
+}
+
+.item:hover i {
+    color: black;
+}
+/* .active {
+    background-color: #008cff;
+    border: 2px solid #eee;
+} */
+
+
+
+
+
+
+
+.items-foto {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    height: 19vw;
+    margin-top: .5vw;
+    
+}
+
+.item-foto {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid #aaa;
+    width: 18.5vw;
+    height: 7.5vw;
+    margin-left: .8vw;
+    margin-right: .8vw;
+    margin-top: -.5vw;
+    transition: .3s;
+    cursor: pointer;
+    
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 100%;
+
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.747);
+}
+
+#foto {
+    background: linear-gradient(70deg,#cb00dd, #ddce00);
+}
+
+.item-foto p {
+    position: absolute;
+    top: 50vh;
+    font-size: 1.5vw;
+    text-shadow: -1px 1px 22px rgba(0,0,0,0.6);
+}
+
+.item-foto:hover {
+    /* background-color: #007add; */
+    
+    background-color: unset;
+    background: linear-gradient(
+		270deg,
+		#dd0000, 
+		#007add
+	);
+    background-size: 700% 700%;
+	animation: gradient 11s ease infinite;
+	animation-delay: .5s;
+    opacity: 95%;
+}
+
+.item-foto i {
+    font-size: 2.5vw;
+    text-align: center;
+    justify-content: center;
+}
+
+.item-foto:hover i {
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.items-menu {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    height: 19vw;
+    margin-top: -34.5vw;
+    
+}
+
+.item-menu {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid #aaa;
+    width: 18.5vw;
+    height: 14.5vw;
+    margin-left: .8vw;
+    margin-right: .8vw;
+    margin-top: -.5vw;
+    transition: .3s;
+    cursor: pointer;
+    background: linear-gradient(70deg,#00aa39, #b100dd);
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 100%;
+
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.747);
+}
+
+#menu {
+    background: linear-gradient(70deg,#00aa39, #b100dd);
+} 
+
+.item-menu p {
+    position: absolute;
+    top: 23vh;
+    font-size: 1.5vw;
+    text-shadow: -1px 1px 22px rgba(0,0,0,0.6);
+}
+
+.item-menu:hover p {
+    visibility: hidden;
+}
+
+.item-menu:hover {
+    /* background-color: #007add; */
+    background-color: unset;
+    background: linear-gradient(
+		270deg,
+		#dd0000, 
+		#007add
+	);
+    background-size: 700% 700%;
+	animation: gradient 11s ease infinite;
+	animation-delay: .5s;
+    opacity: 95%;
+    z-index: 10; 
+    background-color: white;
+    font-size: 0vh;
+}
+
+.item-menu i {
+    font-size: 7.5vw;
+    text-align: center;
+    justify-content: center;
+}
+
+.item-menu:hover i {
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1366px) {
+    .container {
+        width: 18vw;
+        height: 29vw;
+    }
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
